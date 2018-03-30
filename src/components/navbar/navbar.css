@@ -1,0 +1,21 @@
+.logo{
+    font-family: 'Lato', sans-serif;
+    color: hsl(240,4.3%,90%);
+}
+.logo span{
+    color: yellow;
+    font-style: italic;
+}
+
+.back-color{
+    background-color: #51526a;
+}
+
+
+@media screen and (max-width:1100px){
+
+    .breadCrumb{
+       display: none; 
+    }
+
+}
