@@ -1,0 +1,54 @@
+[
+    {
+    "id":1, 
+    "name":"Madness", 
+    "image":"http://placehold.it/200x200", 
+    "description":"Just a tintcure of madness...", 
+    "price":"$19.99", 
+    "lang":{
+        "java":"java",
+        "js":"javascript",
+        "python":"python",
+        "go":"golang"
+    }
+    },
+    {
+        "id":2, 
+        "name":"Like Father/Like Son", 
+        "image":"http://placehold.it/200x200", 
+        "description":"Like Father, Like Son", 
+        "price":"$19.99", 
+        "lang":{
+            "java":"java",
+            "js":"javascript",
+            "python":"python",
+            "go":"golang"
+        }
+    },
+    {
+        "id":3, 
+        "name":"Your Guess", 
+        "image":"http://placehold.it/200x200", 
+        "description":"Your guess is as good as mine", 
+        "price":"$19.99", 
+        "lang":{
+            "java":"java",
+            "js":"javascript",
+            "python":"python",
+            "go":"golang"
+        }
+    },
+    {
+        "id":4, 
+        "name":"Insult", 
+        "image":"http://placehold.it/200x200", 
+        "description":"Adding Insult to Injury", 
+        "price":"$19.99", 
+        "lang":{
+            "java":"java",
+            "js":"javascript",
+            "python":"python",
+            "go":"golang"
+        }
+    }
+]

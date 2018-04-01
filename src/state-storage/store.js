@@ -9,9 +9,7 @@ const allReducers = combineReducers({
 
 const store = createStore(
     allReducers, 
-    {
-        showCart: false,
-    },
+
     window.devToolsExtension && window.devToolsExtension()
 )
 
