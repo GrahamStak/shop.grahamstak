@@ -85,6 +85,8 @@
     ///Construct client
     var pf = new PrintfulClient(key);
 
+    module.exports = pf
+
     //
     //Uncomment any of the following examples to test it
     //
@@ -99,7 +101,7 @@
     //pf.get('products/10').success(ok_callback).error(error_callback);
 
     //Get information about Variant 1007
-    pf.get('sync/products/@5ad3ae60a190d3').success(ok_callback).error(error_callback);
+    // pf.get('sync/products/@5ad3ae60a190d3').success(ok_callback).error(error_callback);
 
     //Select 10 latest orders and get the total number of orders
     //pf.get('orders',{limit: 10}).success(ok_callback).error(error_callback);

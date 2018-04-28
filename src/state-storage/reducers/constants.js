@@ -7,3 +7,6 @@ export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const SET_SHIRT = 'SET_SHIRT';
 export const SET_LOADING = 'SET_LOADING';
 export const SET_QUERY = 'SET_QUERY';
+
+// LOADING
+export const TOGGLE_LOADING = 'TOGGLE_LOADING';

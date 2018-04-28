@@ -1,18 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import './index.css';
-import Container from './App';
-import store from './state-storage/store';
-import registerServiceWorker from './registerServiceWorker';
-import '../node_modules/font-awesome/css/font-awesome.css';
+import React from 'react'
+import { render } from 'react-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import Container from './App'
+import store from './state-storage/store'
 
-const App = ()=> (
-    <Provider store={store}>
-        <Container/>
-    </Provider>
+const App = () => (
+  <Provider store={store}>
+    <Router>
+      <Container />
+    </Router>
+  </Provider>
 )
 
-
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+render(<App />, document.getElementById('root'))

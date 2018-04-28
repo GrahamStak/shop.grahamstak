@@ -1,20 +1,41 @@
-import React, { Component } from 'react';
-import Navigation from './components/navbar/navbar';
-import Product from './components/product/product';
-// import '../node_modules/bootstrap/dist/css/bootstrap.css';
-// import logo from './logo.svg';
-import './App.css';
-// import { Nav, Navbar, MenuItem, NavItem, NavDropdown } from 'react-bootstrap';
+import React, {Component} from 'react';
+import { BrowserRouter as Router, Route, withRouter, Redirect } from 'react-router-dom'
+import Navbar from './components/navbar'
+import Product from './components/product'
+import { connect } from 'react-redux'
+import pf from './state-storage/api/examples'
+import {getAllProducts} from './state-storage/actions/products'
+
 
 class App extends Component {
-  render() {
-    return (
-      <div>
-<Navigation/>
-<Product/>
-      </div>
-    );
-  }
+
+    componentDidMount() {
+      this.props.getAllProducts()
+    }
+
+    render(){
+        const {loading} = this.props;
+        return (
+            <Router>
+                    <div>
+                        <Navbar
+                        />
+                        {/* PUBLIC ROUTES */}
+                        <Route exact strict path='/' component={() => (
+                          <Product/>
+                        )} />
+                    </div>
+            </Router>
+          )
+    }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  loading: state.loading.loading,
+})
+
+const mapDispatchToProps = dispatch => ({
+  getAllProducts: () => dispatch(getAllProducts()),
+})
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))

@@ -1,16 +1,20 @@
-import { createStore, combineReducers } from 'redux';
-import ShoppingCartReducer from './reducers/shoppingCartReducer';
-import ShowCartReducer from './reducers/showCartReducer';
+import { createStore, applyMiddleware } from 'redux'
+import rootReducer from './reducers'
+import { createLogger } from 'redux-logger'
+import thunkMiddleware from 'redux-thunk'
+// import { whoami } from './reducers/actions/auth'
 
-const allReducers = combineReducers({
-    showCart:ShowCartReducer,
-    shoppingCart:ShoppingCartReducer
-});
+let middleware = [thunkMiddleware]
+if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+  middleware.push(createLogger({ collapsed: true }))
+}
 
 const store = createStore(
-    allReducers, 
-
-    window.devToolsExtension && window.devToolsExtension()
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  applyMiddleware(...middleware),
 )
 
-export default store;
+export default store
+
+// store.dispatch(whoami())
