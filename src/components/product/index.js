@@ -16,19 +16,24 @@ class ProductPage extends Component {
     
     render(){
         const {products} = this.props;
+        console.log("PRODUCTS", products, products.length)
         return(
             <div className="container products" >
                 <div className="row">
-                    {products && products.map((p) => {
-                        <Tile 
-                            image={p.sync_variants[0].files[1].preview_url}
-                            name={p.sync_product.name}
-                            price={this.state.price}
-                            description="Some Description"
-                        />
+                    <div>
+                    {products.length > 0 && products.map((p, i) => {
+                        return(
+                            <Tile
+                                key={i} 
+                                image={p.sync_variants[0].files[1].preview_url}
+                                name={p.sync_product.name}
+                                price={this.state.price}
+                                description="Some Description"
+                            />
+                        )
                     })}
-                    
-                    {products.length > 0 && 
+                    </div>
+                    {/* {products.length > 0 && 
                     <div>
                     <Tile 
                             image={products[0].sync_variants[0].files[1].preview_url}
@@ -78,7 +83,8 @@ class ProductPage extends Component {
                             name={products[0].sync_product.name}
                             price={this.state.price}
                             description="Some Description"
-                        /></div>}
+                        />
+                        </div>} */}
                     
                     </div>
                 </div>
